@@ -1,0 +1,23 @@
+#name of workflow
+name: first workflow demo
+
+#run the code when code is pushed to the main branc
+on:
+  push:
+   branches: master
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+  step:
+   #step 1: check out code
+   -name: check out repository
+   -uses: actions/checkout@v3
+
+   #step 2: run a simple command
+   -name: print hello
+   run: "first workflow"
+
+   -name: show files
+   run: 
+     ls -la
